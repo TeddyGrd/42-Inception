@@ -1,4 +1,4 @@
-FROM alpine:3.21
+FROM alpine:3.20
 
 RUN apk update && apk add --no-cache \
     mariadb \
@@ -10,8 +10,6 @@ RUN mkdir -p /run/mysqld /var/lib/mysql && \
 
 COPY conf/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-
-USER mysql
 
 EXPOSE 3306
 
